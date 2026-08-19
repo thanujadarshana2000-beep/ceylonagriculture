@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agriculture Diary | Articles</title>
+
+
+<!-- Google Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<!-- Common Language System -->
+
+<script src="language.js"></script>
+
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:
+        'Poppins',
+        'Noto Sans Sinhala',
+        sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:#f5f8f5;
+
+    color:#1f2937;
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    width:100%;
+
+    background:rgba(255,255,255,.94);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+
+.nav-container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:16px 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.logo{
+
+    text-decoration:none;
+
+    font-size:25px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+
+}
+
+
+.green{
+
+    color:#00a86b;
+
+}
+
+
+.orange{
+
+    color:#f28c28;
+
+}
+
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+/* =====================================================
+   LANGUAGE SWITCH
+===================================================== */
+
+.language-switch{
+
+    display:flex;
+
+    gap:4px;
+
+    background:#f1f5f2;
+
+    padding:4px;
+
+    border-radius:30px;
+
+}
+
+
+.lang-btn{
+
+    border:none;
+
+    background:transparent;
+
+    color:#374151;
+
+    padding:7px 14px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.lang-btn:hover{
+
+    background:#dcefe6;
+
+}
+
+
+.lang-btn.active{
+
+    background:#00a86b;
+
+    color:white;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.article-hero{
+
+    min-height:390px;
+
+    background:
+
+    linear-gradient(
+        rgba(0,70,40,.70),
+        rgba(0,30,20,.78)
+    ),
+
+    url("spinix.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+}
+
+
+.hero-content{
+
+    max-width:850px;
+
+    color:white;
+
+}
+
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:7px 18px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    font-size:13px;
+
+    margin-bottom:18px;
+
+}
+
+
+.hero-content h1{
+
+    font-size:48px;
+
+    line-height:1.2;
+
+    margin-bottom:18px;
+
+}
+
+
+.hero-content p{
+
+    font-size:17px;
+
+    opacity:.9;
+
+    line-height:1.7;
+
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:55px 25px 80px;
+
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+}
+
+
+.section-header h2{
+
+    font-size:30px;
+
+    color:#173b2c;
+
+}
+
+
+.section-header p{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box{
+
+    width:100%;
+
+    margin-bottom:35px;
+
+}
+
+
+.search-box input{
+
+    width:100%;
+
+    padding:17px 22px;
+
+    border:1px solid #dce4df;
+
+    border-radius:15px;
+
+    outline:none;
+
+    font-size:15px;
+
+    background:white;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.04);
+
+    transition:.3s;
+
+}
+
+
+.search-box input:focus{
+
+    border-color:#00a86b;
+
+    box-shadow:
+        0 0 0 3px rgba(0,168,107,.10);
+
+}
+
+
+/* =====================================================
+   CATEGORY FILTER
+===================================================== */
+
+.categories{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:40px;
+
+}
+
+
+.category{
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    background:white;
+
+    color:#4b5563;
+
+    border:1px solid #e5e7eb;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    transition:.3s;
+
+}
+
+
+.category:hover{
+
+    border-color:#00a86b;
+
+    color:#00a86b;
+
+}
+
+
+.category.active{
+
+    background:#00a86b;
+
+    color:white;
+
+    border-color:#00a86b;
+
+}
+
+
+/* =====================================================
+   ARTICLE GRID
+===================================================== */
+
+.article-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+/* =====================================================
+   ARTICLE CARD
+===================================================== */
+
+.article-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid #e7ece9;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.05);
+
+    transition:.35s;
+
+}
+
+
+.article-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.10);
+
+}
+
+
+.article-image{
+
+    height:210px;
+
+    overflow:hidden;
+
+}
+
+
+.article-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+
+.article-card:hover
+.article-image img{
+
+    transform:scale(1.07);
+
+}
+
+
+.article-content{
+
+    padding:22px;
+
+}
+
+
+.article-category{
+
+    display:inline-block;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#00a86b;
+
+    background:#e8f7ef;
+
+    padding:6px 11px;
+
+    border-radius:20px;
+
+    margin-bottom:13px;
+
+    text-transform:uppercase;
+
+}
+
+
+.article-title{
+
+    font-size:19px;
+
+    line-height:1.4;
+
+    color:#173b2c;
+
+    margin-bottom:10px;
+
+}
+
+
+.article-description{
+
+    font-size:13px;
+
+    color:#6b7280;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+}
+
+
+.read-more{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    text-decoration:none;
+
+    color:#00a86b;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+.read-more:hover{
+
+    color:#007d50;
+
+}
+
+
+/* =====================================================
+   NO RESULTS
+===================================================== */
+
+.no-results{
+
+    display:none;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#6b7280;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:#102a20;
+
+    color:white;
+
+    margin-top:30px;
+
+}
+
+
+.footer-container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+}
+
+
+.footer-logo{
+
+    font-size:22px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+
+}
+
+
+.footer-text{
+
+    font-size:13px;
+
+    opacity:.7;
+
+    line-height:1.7;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:950px){
+
+    .article-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .nav-container{
+
+        padding:14px 15px;
+
+    }
+
+    .logo{
+
+        font-size:20px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:34px;
+
+    }
+
+    .hero-content p{
+
+        font-size:14px;
+
+    }
+
+    .section-header{
+
+        display:block;
+
+    }
+
+    .section-header h2{
+
+        margin-bottom:7px;
+
+    }
+
+    .article-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .main{
+
+        padding:40px 15px 60px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+
+<a href="index.html" class="logo">
+
+<span class="green">Agriculture</span>
+<span class="orange">Diary</span>
+
+</a>
+
+
+<div class="nav-right">
+
+<div class="language-switch">
+
+<button
+id="englishBtn"
+class="lang-btn active"
+onclick="setLanguage('en')">
+
+English
+
+</button>
+
+
+<button
+id="sinhalaBtn"
+class="lang-btn"
+onclick="setLanguage('si')">
+
+සිංහල
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="article-hero">
+
+<div class="hero-content">
+
+
+<span
+class="hero-tag"
+data-en="SRI LANKAN AGRICULTURE"
+data-si="ශ්‍රී ලංකා කෘෂිකර්මය">
+
+SRI LANKAN AGRICULTURE
+
+</span>
+
+
+<h1
+data-en="Agriculture Articles"
+data-si="කෘෂිකර්ම ලිපි">
+
+Agriculture Articles
+
+</h1>
+
+
+<p
+data-en="Explore knowledge, innovations and stories about agriculture in Sri Lanka."
+data-si="ශ්‍රී ලංකාවේ කෘෂිකර්මය පිළිබඳ දැනුම, නවෝත්පාදන සහ වැදගත් තොරතුරු ගවේෂණය කරන්න.">
+
+Explore knowledge, innovations and stories about agriculture in Sri Lanka.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+<!-- SECTION HEADER -->
+
+<div class="section-header">
+
+<div>
+
+<h2
+data-en="Latest Articles"
+data-si="නවතම ලිපි">
+
+Latest Articles
+
+</h2>
+
+
+<p
+data-en="Discover useful agricultural knowledge from Sri Lanka."
+data-si="ශ්‍රී ලංකාවේ කෘෂිකර්මය පිළිබඳ ප්‍රයෝජනවත් දැනුම සොයාගන්න.">
+
+Discover useful agricultural knowledge from Sri Lanka.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search agriculture articles..."
+data-placeholder-en="Search agriculture articles..."
+data-placeholder-si="කෘෂිකර්ම ලිපි සොයන්න..."
+onkeyup="searchArticles()">
+
+</div>
+
+
+
+<!-- CATEGORIES -->
+
+<div class="categories">
+
+<button
+class="category active"
+onclick="filterArticles('all',this)"
+data-en="All"
+data-si="සියල්ල">
+
+All
+
+</button>
+
+
+<button
+class="category"
+onclick="filterArticles('crop',this)"
+data-en="Crops"
+data-si="බෝග">
+
+Crops
+
+</button>
+
+
+<button
+class="category"
+onclick="filterArticles('soil',this)"
+data-en="Soil"
+data-si="පාංශු">
+
+Soil
+
+</button>
+
+
+<button
+class="category"
+onclick="filterArticles('fertilizer',this)"
+data-en="Fertilizer"
+data-si="පොහොර">
+
+Fertilizer
+
+</button>
+
+
+<button
+class="category"
+onclick="filterArticles('technology',this)"
+data-en="Technology"
+data-si="තාක්ෂණය">
+
+Technology
+
+</button>
+
+
+<button
+class="category"
+onclick="filterArticles('organic',this)"
+data-en="Organic Agriculture"
+data-si="කාබනික කෘෂිකර්මය">
+
+Organic Agriculture
+
+</button>
+
+</div>
+
+
+
+<!-- =====================================================
+     ARTICLE GRID
+===================================================== -->
+
+<div class="article-grid" id="articleGrid">
+
+
+
+<!-- ARTICLE 01 -->
+
+<article
+class="article-card"
+data-category="crop"
+data-search="paddy rice වී සහල් rice cultivation">
+
+<div class="article-image">
+
+<img
+src="https://images.unsplash.com/photo-1536633795327-2f48e47b4c4c?auto=format&fit=crop&w=900&q=80"
+alt="Rice cultivation">
+
+</div>
+
+
+<div class="article-content">
+
+
+<span
+class="article-category"
+data-en="CROPS"
+data-si="බෝග">
+
+CROPS
+
+</span>
+
+
+<h3
+class="article-title"
+data-en="Rice Cultivation in Sri Lanka"
+data-si="ශ්‍රී ලංකාවේ වී වගාව">
+
+Rice Cultivation in Sri Lanka
+
+</h3>
+
+
+<p
+class="article-description"
+data-en="Learn about traditional and modern rice cultivation practices used by Sri Lankan farmers."
+data-si="ශ්‍රී ලංකාවේ ගොවීන් භාවිතා කරන සාම්ප්‍රදායික සහ නවීන වී වගා ක්‍රම පිළිබඳව දැනගන්න.">
+
+Learn about traditional and modern rice cultivation practices used by Sri Lankan farmers.
+
+</p>
+
+
+<a
+href="#"
+class="read-more"
+data-en="Read Article →"
+data-si="ලිපිය කියවන්න →">
+
+Read Article →
+
+</a>
+
+
+</div>
+
+</article>
+
+
+
+<!-- ARTICLE 02 -->
+
+<article
+class="article-card"
+data-category="soil"
+data-search="soil soil fertility පස පාංශු fertility">
+
+<div class="article-image">
+
+<img
+src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80"
+alt="Agricultural soil">
+
+</div>
+
+
+<div class="article-content">
+
+
+<span
+class="article-category"
+data-en="SOIL"
+data-si="පාංශු">
+
+SOIL
+
+</span>
+
+
+<h3
+class="article-title"
+data-en="Understanding Agricultural Soil Health"
+data-si="කෘෂිකාර්මික පාංශු සෞඛ්‍යය අවබෝධ කර ගැනීම">
+
+Understanding Agricultural Soil Health
+
+</h3>
+
+
+<p
+class="article-description"
+data-en="Discover why soil health, organic matter and nutrient management are important for sustainable farming."
+data-si="තිරසාර කෘෂිකර්මාන්තය සඳහා පාංශු සෞඛ්‍යය, කාබනික ද්‍රව්‍ය සහ පෝෂක කළමනාකරණය වැදගත් වන්නේ ඇයි දැයි දැනගන්න.">
+
+Discover why soil health, organic matter and nutrient management are important for sustainable farming.
+
+</p>
+
+
+<a
+href="#"
+class="read-more"
+data-en="Read Article →"
+data-si="ලිපිය කියවන්න →">
+
+Read Article →
+
+</a>
+
+
+</div>
+
+</article>
+
+
+
+<!-- ARTICLE 03 -->
+
+<article
+class="article-card"
+data-category="fertilizer"
+data-search="fertilizer පොහොර nitrogen phosphorus potassium npk">
+
+<div class="article-image">
+
+<img
+src="https://images.unsplash.com/photo-1592982537447-6f2a6a0a4c6d?auto=format&fit=crop&w=900&q=80"
+alt="Agricultural fertilizer">
+
+</div>
+
+
+<div class="article-content">
+
+
+<span
+class="article-category"
+data-en="FERTILIZER"
+data-si="පොහොර">
+
+FERTILIZER
+
+</span>
+
+
+<h3
+class="article-title"
+data-en="Understanding NPK Fertilizers"
+data-si="NPK පොහොර පිළිබඳ අවබෝධය">
+
+Understanding NPK Fertilizers
+
+</h3>
+
+
+<p
+class="article-description"
+data-en="Understand the role of nitrogen, phosphorus and potassium in crop growth and fertilizer management."
+data-si="බෝග වර්ධනය සහ පොහොර කළමනාකරණය සඳහා නයිට්‍රජන්, පොස්පරස් සහ පොටෑසියම් වල කාර්යභාරය අවබෝධ කරගන්න.">
+
+Understand the role of nitrogen, phosphorus and potassium in crop growth and fertilizer management.
+
+</p>
+
+
+<a
+href="#"
+class="read-more"
+data-en="Read Article →"
+data-si="ලිපිය කියවන්න →">
+
+Read Article →
+
+</a>
+
+
+</div>
+
+</article>
+
+
+
+<!-- ARTICLE 04 -->
+
+<article
+class="article-card"
+data-category="technology"
+data-search="smart farming technology precision agriculture digital">
+
+<div class="article-image">
+
+<img
+src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=900&q=80"
+alt="Smart agriculture">
+
+</div>
+
+
+<div class="article-content">
+
+
+<span
+class="article-category"
+data-en="TECHNOLOGY"
+data-si="තාක්ෂණය">
+
+TECHNOLOGY
+
+</span>
+
+
+<h3
+class="article-title"
+data-en="Modern Agricultural Technology"
+data-si="නවීන කෘෂිකාර්මික තාක්ෂණය">
+
+Modern Agricultural Technology
+
+</h3>
+
+
+<p
+class="article-description"
+data-en="Explore how modern technology, sensors and data can improve agricultural productivity."
+data-si="නවීන තාක්ෂණය, සංවේදක සහ දත්ත භාවිතයෙන් කෘෂිකාර්මික ඵලදායිතාව වැඩිදියුණු කළ හැකි ආකාරය සොයා බලන්න.">
+
+Explore how modern technology, sensors and data can improve agricultural productivity.
+
+</p>
+
+
+<a
+href="#"
+class="read-more"
+data-en="Read Article →"
+data-si="ලිපිය කියවන්න →">
+
+Read Article →
+
+</a>
+
+
+</div>
+
+</article>
+
+
+
+<!-- ARTICLE 05 -->
+
+<article
+class="article-card"
+data-category="organic"
+data-search="organic farming කාබනික agriculture compost">
+
+<div class="article-image">
+
+<img
+src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=80"
+alt="Organic farming">
+
+</div>
+
+
+<div class="article-content">
+
+
+<span
+class="article-category"
+data-en="ORGANIC"
+data-si="කාබනික">
+
+ORGANIC
+
+</span>
+
+
+<h3
+class="article-title"
+data-en="Organic Agriculture in Sri Lanka"
+data-si="ශ්‍රී ලංකාවේ කාබනික කෘෂිකර්මය">
+
+Organic Agriculture in Sri Lanka
+
+</h3>
+
+
+<p
+class="article-description"
+data-en="Learn about organic farming practices, composting and sustainable agricultural production."
+data-si="කාබනික වගා ක්‍රම, කොම්පෝස්ට් නිෂ්පාදනය සහ තිරසාර කෘෂිකාර්මික නිෂ්පාදනය පිළිබඳව දැනගන්න.">
+
+Learn about organic farming practices, composting and sustainable agricultural production.
+
+</p>
+
+
+<a
+href="#"
+class="read-more"
+data-en="Read Article →"
+data-si="ලිපිය කියවන්න →">
+
+Read Article →
+
+</a>
+
+
+</div>
+
+</article>
+
+
+
+<!-- ARTICLE 06 -->
+
+<article
+class="article-card"
+data-category="crop"
+data-search="vegetable vegetables එළවළු vegetable cultivation">
+
+<div class="article-image">
+
+<img
+src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=900&q=80"
+alt="Vegetable cultivation">
+
+</div>
+
+
+<div class="article-content">
+
+
+<span
+class="article-category"
+data-en="CROPS"
+data-si="බෝග">
+
+CROPS
+
+</span>
+
+
+<h3
+class="article-title"
+data-en="Vegetable Production in Sri Lanka"
+data-si="ශ්‍රී ලංකාවේ එළවළු නිෂ්පාදනය">
+
+Vegetable Production in Sri Lanka
+
+</h3>
+
+
+<p
+class="article-description"
+data-en="Explore important vegetable crops and good agricultural practices for better production."
+data-si="වැඩි ඵලදායිතාවයක් සඳහා වැදගත් එළවළු බෝග සහ යහපත් කෘෂිකාර්මික පිළිවෙත් පිළිබඳව සොයා බලන්න.">
+
+Explore important vegetable crops and good agricultural practices for better production.
+
+</p>
+
+
+<a
+href="#"
+class="read-more"
+data-en="Read Article →"
+data-si="ලිපිය කියවන්න →">
+
+Read Article →
+
+</a>
+
+
+</div>
+
+</article>
+
+
+</div>
+
+
+
+<!-- NO RESULTS -->
+
+<div
+class="no-results"
+id="noResults">
+
+<p
+data-en="No articles found."
+data-si="ලිපි කිසිවක් හමු නොවීය.">
+
+No articles found.
+
+</p>
+
+</div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-container">
+
+
+<div class="footer-logo">
+
+<span class="green">Agriculture</span>
+<span class="orange">Diary</span>
+
+</div>
+
+
+<p
+class="footer-text"
+data-en="Exploring Sri Lankan agriculture through knowledge, innovation and experience."
+data-si="දැනුම, නවෝත්පාදන සහ අත්දැකීම් තුළින් ශ්‍රී ලංකා කෘෂිකර්මය ගවේෂණය කිරීම.">
+
+Exploring Sri Lankan agriculture through knowledge, innovation and experience.
+
+</p>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SEARCH & FILTER JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* ==========================================
+   CATEGORY FILTER
+========================================== */
+
+function filterArticles(category, button){
+
+    const articles =
+        document.querySelectorAll(".article-card");
+
+
+    const buttons =
+        document.querySelectorAll(".category");
+
+
+    buttons.forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
+
+
+    button.classList.add("active");
+
+
+    let visible = 0;
+
+
+    articles.forEach(function(article){
+
+        if(
+            category === "all" ||
+            article.dataset.category === category
+        ){
+
+            article.style.display = "block";
+
+            visible++;
+
+        }
+
+        else{
+
+            article.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById("noResults").style.display =
+        visible === 0 ? "block" : "none";
+
+}
+
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+function searchArticles(){
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+
+    const articles =
+        document.querySelectorAll(".article-card");
+
+
+    let visible = 0;
+
+
+    articles.forEach(function(article){
+
+        const text =
+            article.dataset.search.toLowerCase();
+
+
+        if(text.includes(search)){
+
+            article.style.display = "block";
+
+            visible++;
+
+        }
+
+        else{
+
+            article.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById("noResults").style.display =
+        visible === 0 ? "block" : "none";
+
+}
+
+
+
+/* ==========================================
+   LANGUAGE CHANGE
+========================================== */
+
+const originalSetLanguage = window.setLanguage;
+
+
+window.setLanguage = function(language){
+
+    originalSetLanguage(language);
+
+
+    const search =
+        document.getElementById("searchInput");
+
+
+    if(search){
+
+        if(language === "si"){
+
+            search.placeholder =
+                search.getAttribute("data-placeholder-si");
+
+        }
+
+        else{
+
+            search.placeholder =
+                search.getAttribute("data-placeholder-en");
+
+        }
+
+    }
+
+};
+
+</script>
+
+
+</body>
+
+</html>
+```
