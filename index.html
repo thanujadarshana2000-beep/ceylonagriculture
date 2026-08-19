@@ -1,59 +1,65 @@
+```html
 <!DOCTYPE html>
-<html lang="en/sinhala">
+<html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ceylon Agriculture Diary</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins','Noto Sans Sinhala',sans-serif;
 }
 
 body{
-background:#f8f8f8;
+    background:#f8f8f8;
 }
 
-/* Hero Section */
+/* ================= HERO ================= */
 
 .hero{
 
-height:100vh;
+    min-height:100vh;
 
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
-url("spinix.jpg");
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+    url("spinix.jpg");
 
-background-size:cover;
-background-position:center;
-display:flex;
-flex-direction:column;
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    flex-direction:column;
 
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
 
 nav{
 
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 8%;
-color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:25px 8%;
+
+    color:white;
 
 }
 
 .logo{
 
-font-size:32px;
-font-weight:700;
-letter-spacing:1px;
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:1px;
 
 }
 
@@ -65,165 +71,325 @@ letter-spacing:1px;
     color:#ff9800;
 }
 
-nav ul{
 
-display:flex;
-list-style:none;
-gap:35px;
+/* ================= LANGUAGE BUTTON ================= */
 
-}
+.language-switch{
 
-nav ul li{
+    display:flex;
+    align-items:center;
+    gap:5px;
 
-cursor:pointer;
-transition:.3s;
+    background:rgba(255,255,255,.15);
 
-}
+    border:1px solid rgba(255,255,255,.4);
 
-nav ul li:hover{
+    padding:5px;
 
-color:#00d084;
+    border-radius:30px;
 
-}
-
-.btn{
-
-padding:10px 24px;
-background:#00d084;
-border:none;
-border-radius:30px;
-color:white;
-cursor:pointer;
-font-weight:600;
-transition:.3s;
+    backdrop-filter:blur(8px);
 
 }
 
-.btn:hover{
+.lang-btn{
 
-background:#00b96b;
+    border:none;
+
+    background:transparent;
+
+    color:white;
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
 
 }
 
-/* Hero Content */
+.lang-btn:hover{
+
+    background:rgba(255,255,255,.2);
+
+}
+
+.lang-btn.active{
+
+    background:#00d084;
+
+    color:white;
+
+}
+
+
+/* ================= HERO CONTENT ================= */
 
 .hero-content{
 
-flex:1;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-flex-direction:column;
-color:white;
-padding:20px;
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    flex-direction:column;
+
+    color:white;
+
+    padding:20px;
 
 }
 
 .hero-content h1{
 
-font-size:70px;
-font-weight:700;
-margin-bottom:20px;
-line-height:1.2;
+    font-size:70px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    line-height:1.2;
 
 }
 
 .hero-content p{
 
-font-size:20px;
-max-width:750px;
-margin-bottom:40px;
-opacity:.95;
+    font-size:20px;
+
+    max-width:750px;
+
+    margin-bottom:40px;
+
+    opacity:.95;
 
 }
 
 
-/* Explore Button */
+/* ================= EXPLORE BUTTON ================= */
+
 .explore{
 
-margin-top:35px;
-padding:16px 45px;
-background:white;
-color:#222;
-border-radius:40px;
-text-decoration:none;
-text-align:center;
-font-weight:600;
-transition:.3s;
+    margin:0 auto 60px auto;
+
+    padding:16px 45px;
+
+    background:white;
+
+    color:#222;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    font-weight:600;
+
+    transition:.3s;
 
 }
 
 .explore:hover{
 
-background:#00d084;
-color:white;
+    background:#00d084;
+
+    color:white;
 
 }
 
 
-/* Responsive */
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:768px){
 
-.hero-content h1{
+    nav{
+        padding:20px 5%;
+    }
 
-font-size:42px;
+    .hero-content h1{
+        font-size:42px;
+    }
 
-}
+    .hero-content p{
+        font-size:17px;
+    }
 
-.hero-content p{
+    .logo{
+        font-size:25px;
+    }
 
-font-size:17px;
+    .language-switch{
+        gap:2px;
+    }
 
-}
-
-nav ul{
-
-display:none;
-
-}
-
-.logo{
-
-font-size:25px;
-
-}
+    .lang-btn{
+        padding:7px 11px;
+        font-size:12px;
+    }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 <section class="hero">
 
+
+<!-- ================= NAVBAR ================= -->
+
 <nav>
 
 <div class="logo">
-<span class="green">Agriculture</span> <span class="orange">Diary</span>
+    <span class="green">Agriculture</span>
+    <span class="orange">Diary</span>
 </div>
 
+
+<!-- LANGUAGE SWITCH -->
+
+<div class="language-switch">
+
+    <button
+        class="lang-btn active"
+        id="englishBtn"
+        onclick="changeLanguage('en')">
+
+        English
+
+    </button>
+
+
+    <button
+        class="lang-btn"
+        id="sinhalaBtn"
+        onclick="changeLanguage('si')">
+
+        සිංහල
+
+    </button>
+
+</div>
 
 </nav>
 
+
+<!-- ================= HERO CONTENT ================= -->
+
 <div class="hero-content">
 
-<h1>Agriculture Diary</h1>
+    <h1 id="title">
+        Agriculture Diary
+    </h1>
 
-<p>
-From Tradtional Agriculture to Modern Agriculture
-</p>
+
+    <p id="subtitle">
+        From Traditional Agriculture to Modern Agriculture
+    </p>
+
 </div>
 
-<a href="login.html" class="explore">
-Explore Now →
+
+<!-- ================= EXPLORE ================= -->
+
+<a
+    href="login.html"
+    class="explore"
+    id="exploreBtn">
+
+    Explore Now →
+
 </a>
 
-</div>
 
 </section>
 
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function changeLanguage(language){
+
+    const title = document.getElementById("title");
+    const subtitle = document.getElementById("subtitle");
+    const exploreBtn = document.getElementById("exploreBtn");
+
+    const englishBtn = document.getElementById("englishBtn");
+    const sinhalaBtn = document.getElementById("sinhalaBtn");
+
+
+    if(language === "si"){
+
+        /* Sinhala */
+
+        title.innerText = "කෘෂිකර්ම දිනපොත";
+
+        subtitle.innerText =
+        "සාම්ප්‍රදායික කෘෂිකර්මයේ සිට නවීන කෘෂිකර්මය දක්වා";
+
+        exploreBtn.innerText =
+        "ඉදිරියට යන්න →";
+
+
+        /* Active button */
+
+        sinhalaBtn.classList.add("active");
+
+        englishBtn.classList.remove("active");
+
+        /* HTML language */
+
+        document.documentElement.lang = "si";
+
+    }
+
+
+    else{
+
+        /* English */
+
+        title.innerText =
+        "Agriculture Diary";
+
+        subtitle.innerText =
+        "From Traditional Agriculture to Modern Agriculture";
+
+        exploreBtn.innerText =
+        "Explore Now →";
+
+
+        /* Active button */
+
+        englishBtn.classList.add("active");
+
+        sinhalaBtn.classList.remove("active");
+
+        /* HTML language */
+
+        document.documentElement.lang = "en";
+
+    }
+
+}
+
+</script>
+
+
 </body>
 </html>
+```
