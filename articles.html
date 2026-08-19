@@ -198,23 +198,11 @@ body{
 /* =====================================================
    HERO
 ===================================================== */
-
 .article-hero{
 
-    min-height:390px;
+    position:relative;
 
-    background:
-
-    linear-gradient(
-        rgba(0,70,40,.70),
-        rgba(0,30,20,.78)
-    ),
-
-    url("spinix.jpg");
-
-    background-size:cover;
-
-    background-position:center;
+    min-height:430px;
 
     display:flex;
 
@@ -226,7 +214,55 @@ body{
 
     padding:70px 20px;
 
+    overflow:hidden;
+
 }
+
+
+/* Background Image */
+
+.article-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+   background-image:
+    linear-gradient(
+        rgba(0,60,35,.58),
+        rgba(0,20,10,.72)
+    ),
+    var(--hero-image, url("images/rice.jpg"));
+
+    background-size:cover;
+
+    background-position:center;
+
+    transition:
+        opacity 1.2s ease-in-out,
+        background-image 1.2s ease-in-out;
+
+    z-index:0;
+
+}
+
+
+/* Hero Content */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:850px;
+
+    color:white;
+
+}
+
 
 
 .hero-content{
@@ -1567,6 +1603,72 @@ window.setLanguage = function(language){
     }
 
 };
+
+<script>
+
+/* ==========================================
+   AGRICULTURE HERO BACKGROUND SLIDESHOW
+========================================== */
+
+const agricultureImages = [
+
+    "images/rice.jpg",
+
+    "images/vegetables.jpg",
+
+    "images/fruits.jpg",
+
+    "images/tea.jpg",
+
+    "images/floriculture.jpg",
+
+    "images/modern-agriculture.jpg"
+
+];
+
+
+let currentImage = 0;
+
+
+function changeAgricultureBackground(){
+
+    const hero =
+        document.querySelector(".article-hero");
+
+
+    currentImage++;
+
+    if(currentImage >= agricultureImages.length){
+
+        currentImage = 0;
+
+    }
+
+
+    hero.style.setProperty(
+        "--hero-image",
+        `url("${agricultureImages[currentImage]}")`
+    );
+
+
+    hero.classList.add("change-background");
+
+
+    setTimeout(function(){
+
+        hero.classList.remove("change-background");
+
+    },1200);
+
+}
+
+
+/* Start slideshow */
+
+setInterval(
+    changeAgricultureBackground,
+    4000
+);
 
 </script>
 
