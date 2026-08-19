@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,16 +11,22 @@
 <title>Agriculture Diary | Articles</title>
 
 
-<!-- Google Fonts -->
+<!-- =====================================================
+     GOOGLE FONTS
+===================================================== -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 
-<!-- Common Language System -->
+<!-- =====================================================
+     YOUR COMMON LANGUAGE SYSTEM
+===================================================== -->
 
 <script src="language.js"></script>
 
@@ -31,31 +38,23 @@
 ===================================================== */
 
 *{
-
     margin:0;
     padding:0;
-
     box-sizing:border-box;
 
     font-family:
         'Poppins',
         'Noto Sans Sinhala',
         sans-serif;
-
 }
 
 html{
-
     scroll-behavior:smooth;
-
 }
 
 body{
-
-    background:#f5f8f5;
-
+    background:#f5f8f6;
     color:#1f2937;
-
 }
 
 
@@ -66,21 +65,18 @@ body{
 .navbar{
 
     position:sticky;
-
     top:0;
-
     z-index:1000;
 
     width:100%;
 
-    background:rgba(255,255,255,.94);
+    background:rgba(255,255,255,.95);
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(15px);
 
     border-bottom:1px solid #e5e7eb;
 
 }
-
 
 .nav-container{
 
@@ -88,7 +84,7 @@ body{
 
     margin:auto;
 
-    padding:16px 25px;
+    padding:15px 25px;
 
     display:flex;
 
@@ -97,7 +93,6 @@ body{
     justify-content:space-between;
 
 }
-
 
 .logo{
 
@@ -111,18 +106,12 @@ body{
 
 }
 
-
 .green{
-
     color:#00a86b;
-
 }
 
-
 .orange{
-
     color:#f28c28;
-
 }
 
 
@@ -147,14 +136,13 @@ body{
 
     gap:4px;
 
-    background:#f1f5f2;
+    background:#eef4f0;
 
     padding:4px;
 
     border-radius:30px;
 
 }
-
 
 .lang-btn{
 
@@ -164,9 +152,9 @@ body{
 
     color:#374151;
 
-    padding:7px 14px;
+    padding:8px 15px;
 
-    border-radius:20px;
+    border-radius:22px;
 
     cursor:pointer;
 
@@ -178,13 +166,11 @@ body{
 
 }
 
-
 .lang-btn:hover{
 
-    background:#dcefe6;
+    background:#dcece3;
 
 }
-
 
 .lang-btn.active{
 
@@ -198,11 +184,12 @@ body{
 /* =====================================================
    HERO
 ===================================================== */
+
 .article-hero{
 
     position:relative;
 
-    min-height:430px;
+    min-height:470px;
 
     display:flex;
 
@@ -212,14 +199,16 @@ body{
 
     text-align:center;
 
-    padding:70px 20px;
+    padding:80px 20px;
 
     overflow:hidden;
+
+    isolation:isolate;
 
 }
 
 
-/* Background Image */
+/* Background image layer */
 
 .article-hero::before{
 
@@ -229,94 +218,175 @@ body{
 
     inset:0;
 
-   background-image:
-    linear-gradient(
-        rgba(0,60,35,.58),
-        rgba(0,20,10,.72)
-    ),
-    var(--hero-image, url("images/rice.jpg"));
+    z-index:-2;
+
+    background-image:
+        linear-gradient(
+            rgba(0,45,28,.58),
+            rgba(0,15,8,.78)
+        ),
+        var(
+            --hero-image,
+            url("https://images.unsplash.com/photo-1536633795327-2f48e47b4c4c?auto=format&fit=crop&w=1800&q=85")
+        );
 
     background-size:cover;
 
     background-position:center;
 
+    transform:scale(1.03);
+
     transition:
-        opacity 1.2s ease-in-out,
-        background-image 1.2s ease-in-out;
-
-    z-index:0;
+        opacity 1s ease,
+        transform 6s ease;
 
 }
 
 
-/* Hero Content */
+/* Dark overlay */
 
-.hero-content{
+.article-hero::after{
 
-    position:relative;
+    content:"";
 
-    z-index:2;
+    position:absolute;
 
-    max-width:850px;
+    inset:0;
 
-    color:white;
+    z-index:-1;
 
-}
-
-
-
-.hero-content{
-
-    max-width:850px;
-
-    color:white;
-
-}
-
-
-.hero-tag{
-
-    display:inline-block;
-
-    padding:7px 18px;
-
-    border-radius:30px;
-
-    background:rgba(255,255,255,.15);
-
-    border:1px solid rgba(255,255,255,.3);
-
-    font-size:13px;
-
-    margin-bottom:18px;
-
-}
-
-
-.hero-content h1{
-
-    font-size:48px;
-
-    line-height:1.2;
-
-    margin-bottom:18px;
-
-}
-
-
-.hero-content p{
-
-    font-size:17px;
-
-    opacity:.9;
-
-    line-height:1.7;
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(0,0,0,.18) 60%,
+            rgba(0,0,0,.35) 100%
+        );
 
 }
 
 
 /* =====================================================
-   MAIN CONTENT
+   HERO CONTENT
+===================================================== */
+
+.hero-content{
+
+    max-width:900px;
+
+    color:white;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.14);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    backdrop-filter:blur(8px);
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content h1{
+
+    font-size:55px;
+
+    line-height:1.15;
+
+    margin-bottom:20px;
+
+    font-weight:800;
+
+    text-shadow:
+        0 4px 20px rgba(0,0,0,.25);
+
+}
+
+.hero-content p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:750px;
+
+    margin:auto;
+
+    opacity:.94;
+
+}
+
+
+/* =====================================================
+   HERO SLIDER DOTS
+===================================================== */
+
+.slider-dots{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:8px;
+
+    z-index:5;
+
+}
+
+.slider-dot{
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.45);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.slider-dot.active{
+
+    width:25px;
+
+    border-radius:20px;
+
+    background:#00d084;
+
+}
+
+
+/* =====================================================
+   MAIN
 ===================================================== */
 
 .main{
@@ -325,7 +395,7 @@ body{
 
     margin:auto;
 
-    padding:55px 25px 80px;
+    padding:60px 25px 90px;
 
 }
 
@@ -342,27 +412,25 @@ body{
 
     align-items:end;
 
-    gap:20px;
-
-    margin-bottom:30px;
+    margin-bottom:25px;
 
 }
-
 
 .section-header h2{
 
-    font-size:30px;
-
     color:#173b2c;
 
-}
+    font-size:32px;
 
+}
 
 .section-header p{
 
     color:#6b7280;
 
     font-size:14px;
+
+    margin-top:7px;
 
 }
 
@@ -373,42 +441,41 @@ body{
 
 .search-box{
 
-    width:100%;
+    position:relative;
 
-    margin-bottom:35px;
+    margin-bottom:25px;
 
 }
-
 
 .search-box input{
 
     width:100%;
 
-    padding:17px 22px;
+    padding:18px 22px;
 
-    border:1px solid #dce4df;
+    border-radius:16px;
 
-    border-radius:15px;
-
-    outline:none;
-
-    font-size:15px;
+    border:1px solid #dce5df;
 
     background:white;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.04);
+    outline:none;
+
+    font-size:14px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.04);
 
     transition:.3s;
 
 }
-
 
 .search-box input:focus{
 
     border-color:#00a86b;
 
     box-shadow:
-        0 0 0 3px rgba(0,168,107,.10);
+        0 0 0 4px rgba(0,168,107,.09);
 
 }
 
@@ -429,38 +496,35 @@ body{
 
 }
 
-
 .category{
 
-    border:none;
-
-    padding:10px 18px;
-
-    border-radius:30px;
+    border:1px solid #dfe7e2;
 
     background:white;
 
     color:#4b5563;
 
-    border:1px solid #e5e7eb;
+    padding:10px 17px;
+
+    border-radius:30px;
 
     cursor:pointer;
 
-    font-size:13px;
+    font-size:12px;
+
+    font-weight:600;
 
     transition:.3s;
 
 }
 
-
 .category:hover{
-
-    border-color:#00a86b;
 
     color:#00a86b;
 
-}
+    border-color:#00a86b;
 
+}
 
 .category.active{
 
@@ -484,7 +548,7 @@ body{
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:25px;
+    gap:27px;
 
 }
 
@@ -501,34 +565,40 @@ body{
 
     overflow:hidden;
 
-    border:1px solid #e7ece9;
+    border:1px solid #e5ebe7;
 
     box-shadow:
-        0 8px 30px rgba(0,0,0,.05);
+        0 8px 28px rgba(0,0,0,.05);
 
-    transition:.35s;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
 
 }
-
 
 .article-card:hover{
 
-    transform:translateY(-7px);
+    transform:translateY(-8px);
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.10);
+        0 18px 45px rgba(0,0,0,.11);
 
 }
 
+
+/* =====================================================
+   ARTICLE IMAGE
+===================================================== */
 
 .article-image{
 
-    height:210px;
+    height:220px;
 
     overflow:hidden;
 
-}
+    position:relative;
 
+}
 
 .article-image img{
 
@@ -538,86 +608,80 @@ body{
 
     object-fit:cover;
 
-    transition:.5s;
+    transition:
+        transform .6s ease;
 
 }
-
 
 .article-card:hover
 .article-image img{
 
-    transform:scale(1.07);
+    transform:scale(1.08);
 
 }
 
+
+/* =====================================================
+   ARTICLE CONTENT
+===================================================== */
 
 .article-content{
 
-    padding:22px;
+    padding:23px;
 
 }
-
 
 .article-category{
 
     display:inline-block;
 
-    font-size:11px;
-
-    font-weight:700;
-
-    color:#00a86b;
-
-    background:#e8f7ef;
-
     padding:6px 11px;
 
     border-radius:20px;
 
-    margin-bottom:13px;
+    background:#e8f7ef;
 
-    text-transform:uppercase;
+    color:#00865a;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+
+    margin-bottom:12px;
 
 }
 
-
 .article-title{
+
+    color:#173b2c;
 
     font-size:19px;
 
-    line-height:1.4;
-
-    color:#173b2c;
+    line-height:1.45;
 
     margin-bottom:10px;
 
 }
 
-
 .article-description{
-
-    font-size:13px;
 
     color:#6b7280;
 
-    line-height:1.7;
+    font-size:13px;
+
+    line-height:1.75;
 
     margin-bottom:18px;
 
 }
 
-
 .read-more{
 
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:7px;
+    color:#00a86b;
 
     text-decoration:none;
-
-    color:#00a86b;
 
     font-size:13px;
 
@@ -625,10 +689,9 @@ body{
 
 }
 
-
 .read-more:hover{
 
-    color:#007d50;
+    color:#007b50;
 
 }
 
@@ -643,7 +706,7 @@ body{
 
     text-align:center;
 
-    padding:50px 20px;
+    padding:60px 20px;
 
     color:#6b7280;
 
@@ -660,10 +723,7 @@ footer{
 
     color:white;
 
-    margin-top:30px;
-
 }
-
 
 .footer-container{
 
@@ -671,16 +731,15 @@ footer{
 
     margin:auto;
 
-    padding:40px 25px;
-
     text-align:center;
+
+    padding:45px 25px;
 
 }
 
-
 .footer-logo{
 
-    font-size:22px;
+    font-size:23px;
 
     font-weight:800;
 
@@ -688,14 +747,13 @@ footer{
 
 }
 
-
 .footer-text{
+
+    color:#cbd5d0;
 
     font-size:13px;
 
-    opacity:.7;
-
-    line-height:1.7;
+    line-height:1.8;
 
 }
 
@@ -715,12 +773,11 @@ footer{
 
 }
 
-
 @media(max-width:650px){
 
     .nav-container{
 
-        padding:14px 15px;
+        padding:13px 15px;
 
     }
 
@@ -730,15 +787,36 @@ footer{
 
     }
 
+    .lang-btn{
+
+        padding:7px 10px;
+
+        font-size:11px;
+
+    }
+
     .hero-content h1{
 
-        font-size:34px;
+        font-size:37px;
 
     }
 
     .hero-content p{
 
         font-size:14px;
+
+    }
+
+    .article-hero{
+
+        min-height:420px;
+
+    }
+
+    .main{
+
+        padding:
+            45px 15px 65px;
 
     }
 
@@ -750,19 +828,13 @@ footer{
 
     .section-header h2{
 
-        margin-bottom:7px;
+        font-size:27px;
 
     }
 
     .article-grid{
 
         grid-template-columns:1fr;
-
-    }
-
-    .main{
-
-        padding:40px 15px 60px;
 
     }
 
@@ -787,8 +859,13 @@ footer{
 
 <a href="index.html" class="logo">
 
-<span class="green">Agriculture</span>
-<span class="orange">Diary</span>
+<span class="green">
+Agriculture
+</span>
+
+<span class="orange">
+Diary
+</span>
 
 </a>
 
@@ -827,10 +904,11 @@ onclick="setLanguage('si')">
 
 
 <!-- =====================================================
-     HERO
+     AGRICULTURE HERO
 ===================================================== -->
 
 <section class="article-hero">
+
 
 <div class="hero-content">
 
@@ -855,28 +933,64 @@ Agriculture Articles
 
 
 <p
-data-en="Explore knowledge, innovations and stories about agriculture in Sri Lanka."
-data-si="ශ්‍රී ලංකාවේ කෘෂිකර්මය පිළිබඳ දැනුම, නවෝත්පාදන සහ වැදගත් තොරතුරු ගවේෂණය කරන්න.">
+data-en="Explore knowledge, traditional practices, modern technologies and inspiring stories from Sri Lankan agriculture."
+data-si="ශ්‍රී ලංකා කෘෂිකර්මයේ දැනුම, සාම්ප්‍රදායික ක්‍රම, නවීන තාක්ෂණයන් සහ වැදගත් තොරතුරු ගවේෂණය කරන්න.">
 
-Explore knowledge, innovations and stories about agriculture in Sri Lanka.
+Explore knowledge, traditional practices, modern technologies and inspiring stories from Sri Lankan agriculture.
 
 </p>
 
 
 </div>
 
+
+<!-- SLIDER DOTS -->
+
+<div class="slider-dots">
+
+<span
+class="slider-dot active"
+onclick="showSlide(0)">
+</span>
+
+<span
+class="slider-dot"
+onclick="showSlide(1)">
+</span>
+
+<span
+class="slider-dot"
+onclick="showSlide(2)">
+</span>
+
+<span
+class="slider-dot"
+onclick="showSlide(3)">
+</span>
+
+<span
+class="slider-dot"
+onclick="showSlide(4)">
+</span>
+
+<span
+class="slider-dot"
+onclick="showSlide(5)">
+</span>
+
+</div>
+
+
 </section>
 
 
 
 <!-- =====================================================
-     MAIN
+     MAIN CONTENT
 ===================================================== -->
 
 <main class="main">
 
-
-<!-- SECTION HEADER -->
 
 <div class="section-header">
 
@@ -892,10 +1006,10 @@ Latest Articles
 
 
 <p
-data-en="Discover useful agricultural knowledge from Sri Lanka."
-data-si="ශ්‍රී ලංකාවේ කෘෂිකර්මය පිළිබඳ ප්‍රයෝජනවත් දැනුම සොයාගන්න.">
+data-en="Agriculture knowledge for Sri Lankan farmers, students and enthusiasts."
+data-si="ශ්‍රී ලංකාවේ ගොවීන්, සිසුන් සහ කෘෂිකර්මයට උනන්දුවක් දක්වන සියලු දෙනා සඳහා කෘෂිකාර්මික දැනුම.">
 
-Discover useful agricultural knowledge from Sri Lanka.
+Agriculture knowledge for Sri Lankan farmers, students and enthusiasts.
 
 </p>
 
@@ -905,25 +1019,34 @@ Discover useful agricultural knowledge from Sri Lanka.
 
 
 
-<!-- SEARCH -->
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
 <div class="search-box">
 
 <input
 type="text"
 id="searchInput"
-placeholder="Search agriculture articles..."
+
 data-placeholder-en="Search agriculture articles..."
+
 data-placeholder-si="කෘෂිකර්ම ලිපි සොයන්න..."
+
+placeholder="Search agriculture articles..."
+
 onkeyup="searchArticles()">
 
 </div>
 
 
 
-<!-- CATEGORIES -->
+<!-- =====================================================
+     CATEGORY BUTTONS
+===================================================== -->
 
 <div class="categories">
+
 
 <button
 class="category active"
@@ -938,11 +1061,44 @@ All
 
 <button
 class="category"
-onclick="filterArticles('crop',this)"
-data-en="Crops"
-data-si="බෝග">
+onclick="filterArticles('rice',this)"
+data-en="Rice"
+data-si="වී වගාව">
 
-Crops
+Rice
+
+</button>
+
+
+<button
+class="category"
+onclick="filterArticles('vegetable',this)"
+data-en="Vegetables"
+data-si="එළවළු">
+
+Vegetables
+
+</button>
+
+
+<button
+class="category"
+onclick="filterArticles('fruit',this)"
+data-en="Fruits"
+data-si="පලතුරු">
+
+Fruits
+
+</button>
+
+
+<button
+class="category"
+onclick="filterArticles('tea',this)"
+data-en="Tea"
+data-si="තේ">
+
+Tea
 
 </button>
 
@@ -983,12 +1139,13 @@ Technology
 <button
 class="category"
 onclick="filterArticles('organic',this)"
-data-en="Organic Agriculture"
-data-si="කාබනික කෘෂිකර්මය">
+data-en="Organic"
+data-si="කාබනික">
 
-Organic Agriculture
+Organic
 
 </button>
+
 
 </div>
 
@@ -998,22 +1155,30 @@ Organic Agriculture
      ARTICLE GRID
 ===================================================== -->
 
-<div class="article-grid" id="articleGrid">
+<div
+class="article-grid"
+id="articleGrid">
 
 
 
-<!-- ARTICLE 01 -->
+<!-- =====================================================
+     ARTICLE 01 - RICE
+===================================================== -->
 
 <article
 class="article-card"
-data-category="crop"
-data-search="paddy rice වී සහල් rice cultivation">
+
+data-category="rice"
+
+data-search="
+rice paddy වී වගාව සහල් paddy cultivation
+">
 
 <div class="article-image">
 
 <img
-src="https://images.unsplash.com/photo-1536633795327-2f48e47b4c4c?auto=format&fit=crop&w=900&q=80"
-alt="Rice cultivation">
+src="https://images.unsplash.com/photo-1536633795327-2f48e47b4c4c?auto=format&fit=crop&w=1000&q=85"
+alt="Sri Lankan rice cultivation">
 
 </div>
 
@@ -1023,17 +1188,19 @@ alt="Rice cultivation">
 
 <span
 class="article-category"
-data-en="CROPS"
-data-si="බෝග">
+data-en="RICE"
+data-si="වී වගාව">
 
-CROPS
+RICE
 
 </span>
 
 
 <h3
 class="article-title"
+
 data-en="Rice Cultivation in Sri Lanka"
+
 data-si="ශ්‍රී ලංකාවේ වී වගාව">
 
 Rice Cultivation in Sri Lanka
@@ -1043,10 +1210,12 @@ Rice Cultivation in Sri Lanka
 
 <p
 class="article-description"
-data-en="Learn about traditional and modern rice cultivation practices used by Sri Lankan farmers."
-data-si="ශ්‍රී ලංකාවේ ගොවීන් භාවිතා කරන සාම්ප්‍රදායික සහ නවීන වී වගා ක්‍රම පිළිබඳව දැනගන්න.">
 
-Learn about traditional and modern rice cultivation practices used by Sri Lankan farmers.
+data-en="Explore traditional and modern rice cultivation practices, crop establishment and important management practices."
+
+data-si="සාම්ප්‍රදායික සහ නවීන වී වගා ක්‍රම, බෝග ස්ථාපනය සහ වැදගත් කළමනාකරණ පිළිවෙත් පිළිබඳව දැනගන්න.">
+
+Explore traditional and modern rice cultivation practices, crop establishment and important management practices.
 
 </p>
 
@@ -1054,7 +1223,9 @@ Learn about traditional and modern rice cultivation practices used by Sri Lankan
 <a
 href="#"
 class="read-more"
+
 data-en="Read Article →"
+
 data-si="ලිපිය කියවන්න →">
 
 Read Article →
@@ -1068,17 +1239,261 @@ Read Article →
 
 
 
-<!-- ARTICLE 02 -->
+<!-- =====================================================
+     ARTICLE 02 - VEGETABLE
+===================================================== -->
 
 <article
 class="article-card"
-data-category="soil"
-data-search="soil soil fertility පස පාංශු fertility">
+
+data-category="vegetable"
+
+data-search="
+vegetable vegetables එළවළු carrot cabbage tomato beans
+">
 
 <div class="article-image">
 
 <img
-src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80"
+src="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?auto=format&fit=crop&w=1000&q=85"
+alt="Vegetable farming">
+
+</div>
+
+
+<div class="article-content">
+
+
+<span
+class="article-category"
+data-en="VEGETABLES"
+data-si="එළවළු">
+
+VEGETABLES
+
+</span>
+
+
+<h3
+class="article-title"
+
+data-en="Vegetable Production in Sri Lanka"
+
+data-si="ශ්‍රී ලංකාවේ එළවළු නිෂ්පාදනය">
+
+Vegetable Production in Sri Lanka
+
+</h3>
+
+
+<p
+class="article-description"
+
+data-en="Learn about important vegetable crops, growing conditions and good agricultural practices for better production."
+
+data-si="වැදගත් එළවළු බෝග, වගා පරිසර තත්ත්ව සහ වඩාත් හොඳ නිෂ්පාදනයක් සඳහා යහපත් කෘෂිකාර්මික පිළිවෙත් පිළිබඳව දැනගන්න.">
+
+Learn about important vegetable crops, growing conditions and good agricultural practices for better production.
+
+</p>
+
+
+<a
+href="#"
+class="read-more"
+
+data-en="Read Article →"
+
+data-si="ලිපිය කියවන්න →">
+
+Read Article →
+
+</a>
+
+
+</div>
+
+</article>
+
+
+
+<!-- =====================================================
+     ARTICLE 03 - FRUITS
+===================================================== -->
+
+<article
+class="article-card"
+
+data-category="fruit"
+
+data-search="
+fruit fruits පලතුරු mango banana pineapple papaya
+">
+
+<div class="article-image">
+
+<img
+src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=1000&q=85"
+alt="Tropical fruits">
+
+</div>
+
+
+<div class="article-content">
+
+
+<span
+class="article-category"
+
+data-en="FRUITS"
+
+data-si="පලතුරු">
+
+FRUITS
+
+</span>
+
+
+<h3
+class="article-title"
+
+data-en="Fruit Crops of Sri Lanka"
+
+data-si="ශ්‍රී ලංකාවේ පලතුරු බෝග">
+
+Fruit Crops of Sri Lanka
+
+</h3>
+
+
+<p
+class="article-description"
+
+data-en="Discover important tropical fruit crops grown in Sri Lanka and their production opportunities."
+
+data-si="ශ්‍රී ලංකාවේ වගා කරන වැදගත් නිවර්තන පලතුරු බෝග සහ ඒවායේ නිෂ්පාදන අවස්ථා පිළිබඳව සොයා බලන්න.">
+
+Discover important tropical fruit crops grown in Sri Lanka and their production opportunities.
+
+</p>
+
+
+<a
+href="#"
+class="read-more"
+
+data-en="Read Article →"
+
+data-si="ලිපිය කියවන්න →">
+
+Read Article →
+
+</a>
+
+
+</div>
+
+</article>
+
+
+
+<!-- =====================================================
+     ARTICLE 04 - TEA
+===================================================== -->
+
+<article
+class="article-card"
+
+data-category="tea"
+
+data-search="
+tea තේ plantation Nuwara Eliya up country
+">
+
+<div class="article-image">
+
+<img
+src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1000&q=85"
+alt="Sri Lanka tea plantation">
+
+</div>
+
+
+<div class="article-content">
+
+
+<span
+class="article-category"
+
+data-en="TEA"
+
+data-si="තේ">
+
+TEA
+
+</span>
+
+
+<h3
+class="article-title"
+
+data-en="Tea Cultivation in Sri Lanka"
+
+data-si="ශ්‍රී ලංකාවේ තේ වගාව">
+
+Tea Cultivation in Sri Lanka
+
+</h3>
+
+
+<p
+class="article-description"
+
+data-en="Explore the importance of tea cultivation, plantation management and sustainable production practices."
+
+data-si="තේ වගාවේ වැදගත්කම, වතු කළමනාකරණය සහ තිරසාර නිෂ්පාදන ක්‍රම පිළිබඳව ගවේෂණය කරන්න.">
+
+Explore the importance of tea cultivation, plantation management and sustainable production practices.
+
+</p>
+
+
+<a
+href="#"
+class="read-more"
+
+data-en="Read Article →"
+
+data-si="ලිපිය කියවන්න →">
+
+Read Article →
+
+</a>
+
+
+</div>
+
+</article>
+
+
+
+<!-- =====================================================
+     ARTICLE 05 - SOIL
+===================================================== -->
+
+<article
+class="article-card"
+
+data-category="soil"
+
+data-search="
+soil පාංශු soil health fertility organic matter
+">
+
+<div class="article-image">
+
+<img
+src="https://images.unsplash.com/photo-1592982537447-6f2a6a0a4c6d?auto=format&fit=crop&w=1000&q=85"
 alt="Agricultural soil">
 
 </div>
@@ -1089,7 +1504,9 @@ alt="Agricultural soil">
 
 <span
 class="article-category"
+
 data-en="SOIL"
+
 data-si="පාංශු">
 
 SOIL
@@ -1099,8 +1516,10 @@ SOIL
 
 <h3
 class="article-title"
+
 data-en="Understanding Agricultural Soil Health"
-data-si="කෘෂිකාර්මික පාංශු සෞඛ්‍යය අවබෝධ කර ගැනීම">
+
+data-si="කෘෂිකාර්මික පාංශු සෞඛ්‍යය">
 
 Understanding Agricultural Soil Health
 
@@ -1109,10 +1528,12 @@ Understanding Agricultural Soil Health
 
 <p
 class="article-description"
-data-en="Discover why soil health, organic matter and nutrient management are important for sustainable farming."
-data-si="තිරසාර කෘෂිකර්මාන්තය සඳහා පාංශු සෞඛ්‍යය, කාබනික ද්‍රව්‍ය සහ පෝෂක කළමනාකරණය වැදගත් වන්නේ ඇයි දැයි දැනගන්න.">
 
-Discover why soil health, organic matter and nutrient management are important for sustainable farming.
+data-en="Understand soil fertility, organic matter, pH and nutrient management for sustainable crop production."
+
+data-si="තිරසාර බෝග නිෂ්පාදනය සඳහා පාංශු සාරවත්භාවය, කාබනික ද්‍රව්‍ය, pH අගය සහ පෝෂක කළමනාකරණය පිළිබඳව අවබෝධ කරගන්න.">
+
+Understand soil fertility, organic matter, pH and nutrient management for sustainable crop production.
 
 </p>
 
@@ -1120,7 +1541,9 @@ Discover why soil health, organic matter and nutrient management are important f
 <a
 href="#"
 class="read-more"
+
 data-en="Read Article →"
+
 data-si="ලිපිය කියවන්න →">
 
 Read Article →
@@ -1134,17 +1557,23 @@ Read Article →
 
 
 
-<!-- ARTICLE 03 -->
+<!-- =====================================================
+     ARTICLE 06 - FERTILIZER
+===================================================== -->
 
 <article
 class="article-card"
+
 data-category="fertilizer"
-data-search="fertilizer පොහොර nitrogen phosphorus potassium npk">
+
+data-search="
+fertilizer පොහොර NPK nitrogen phosphorus potassium
+">
 
 <div class="article-image">
 
 <img
-src="https://images.unsplash.com/photo-1592982537447-6f2a6a0a4c6d?auto=format&fit=crop&w=900&q=80"
+src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=1000&q=85"
 alt="Agricultural fertilizer">
 
 </div>
@@ -1155,7 +1584,9 @@ alt="Agricultural fertilizer">
 
 <span
 class="article-category"
+
 data-en="FERTILIZER"
+
 data-si="පොහොර">
 
 FERTILIZER
@@ -1165,7 +1596,9 @@ FERTILIZER
 
 <h3
 class="article-title"
+
 data-en="Understanding NPK Fertilizers"
+
 data-si="NPK පොහොර පිළිබඳ අවබෝධය">
 
 Understanding NPK Fertilizers
@@ -1175,10 +1608,12 @@ Understanding NPK Fertilizers
 
 <p
 class="article-description"
-data-en="Understand the role of nitrogen, phosphorus and potassium in crop growth and fertilizer management."
-data-si="බෝග වර්ධනය සහ පොහොර කළමනාකරණය සඳහා නයිට්‍රජන්, පොස්පරස් සහ පොටෑසියම් වල කාර්යභාරය අවබෝධ කරගන්න.">
 
-Understand the role of nitrogen, phosphorus and potassium in crop growth and fertilizer management.
+data-en="Learn how nitrogen, phosphorus and potassium support crop growth and how fertilizers are managed."
+
+data-si="නයිට්‍රජන්, පොස්පරස් සහ පොටෑසියම් බෝග වර්ධනයට දායක වන ආකාරය සහ පොහොර කළමනාකරණය පිළිබඳව දැනගන්න.">
+
+Learn how nitrogen, phosphorus and potassium support crop growth and how fertilizers are managed.
 
 </p>
 
@@ -1186,7 +1621,9 @@ Understand the role of nitrogen, phosphorus and potassium in crop growth and fer
 <a
 href="#"
 class="read-more"
+
 data-en="Read Article →"
+
 data-si="ලිපිය කියවන්න →">
 
 Read Article →
@@ -1200,18 +1637,24 @@ Read Article →
 
 
 
-<!-- ARTICLE 04 -->
+<!-- =====================================================
+     ARTICLE 07 - TECHNOLOGY
+===================================================== -->
 
 <article
 class="article-card"
+
 data-category="technology"
-data-search="smart farming technology precision agriculture digital">
+
+data-search="
+technology smart farming precision agriculture technology
+">
 
 <div class="article-image">
 
 <img
-src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=900&q=80"
-alt="Smart agriculture">
+src="https://images.unsplash.com/photo-1581093458791-9d42e3c3a0f3?auto=format&fit=crop&w=1000&q=85"
+alt="Agricultural technology">
 
 </div>
 
@@ -1221,7 +1664,9 @@ alt="Smart agriculture">
 
 <span
 class="article-category"
+
 data-en="TECHNOLOGY"
+
 data-si="තාක්ෂණය">
 
 TECHNOLOGY
@@ -1231,7 +1676,9 @@ TECHNOLOGY
 
 <h3
 class="article-title"
+
 data-en="Modern Agricultural Technology"
+
 data-si="නවීන කෘෂිකාර්මික තාක්ෂණය">
 
 Modern Agricultural Technology
@@ -1241,10 +1688,12 @@ Modern Agricultural Technology
 
 <p
 class="article-description"
-data-en="Explore how modern technology, sensors and data can improve agricultural productivity."
-data-si="නවීන තාක්ෂණය, සංවේදක සහ දත්ත භාවිතයෙන් කෘෂිකාර්මික ඵලදායිතාව වැඩිදියුණු කළ හැකි ආකාරය සොයා බලන්න.">
 
-Explore how modern technology, sensors and data can improve agricultural productivity.
+data-en="Explore smart farming, sensors, protected cultivation and modern technologies used in agriculture."
+
+data-si="Smart farming, සංවේදක, ආරක්ෂිත වගා පද්ධති සහ කෘෂිකර්මයේ භාවිත වන නවීන තාක්ෂණයන් පිළිබඳව සොයා බලන්න.">
+
+Explore smart farming, sensors, protected cultivation and modern technologies used in agriculture.
 
 </p>
 
@@ -1252,7 +1701,9 @@ Explore how modern technology, sensors and data can improve agricultural product
 <a
 href="#"
 class="read-more"
+
 data-en="Read Article →"
+
 data-si="ලිපිය කියවන්න →">
 
 Read Article →
@@ -1266,18 +1717,24 @@ Read Article →
 
 
 
-<!-- ARTICLE 05 -->
+<!-- =====================================================
+     ARTICLE 08 - ORGANIC
+===================================================== -->
 
 <article
 class="article-card"
+
 data-category="organic"
-data-search="organic farming කාබනික agriculture compost">
+
+data-search="
+organic organic agriculture කාබනික compost sustainable
+">
 
 <div class="article-image">
 
 <img
-src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=80"
-alt="Organic farming">
+src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=1000&q=85"
+alt="Organic agriculture">
 
 </div>
 
@@ -1287,7 +1744,9 @@ alt="Organic farming">
 
 <span
 class="article-category"
+
 data-en="ORGANIC"
+
 data-si="කාබනික">
 
 ORGANIC
@@ -1297,7 +1756,9 @@ ORGANIC
 
 <h3
 class="article-title"
+
 data-en="Organic Agriculture in Sri Lanka"
+
 data-si="ශ්‍රී ලංකාවේ කාබනික කෘෂිකර්මය">
 
 Organic Agriculture in Sri Lanka
@@ -1307,10 +1768,12 @@ Organic Agriculture in Sri Lanka
 
 <p
 class="article-description"
-data-en="Learn about organic farming practices, composting and sustainable agricultural production."
-data-si="කාබනික වගා ක්‍රම, කොම්පෝස්ට් නිෂ්පාදනය සහ තිරසාර කෘෂිකාර්මික නිෂ්පාදනය පිළිබඳව දැනගන්න.">
 
-Learn about organic farming practices, composting and sustainable agricultural production.
+data-en="Learn about composting, organic inputs, biological practices and sustainable agricultural production."
+
+data-si="කොම්පෝස්ට්, කාබනික යෙදවුම්, ජීව විද්‍යාත්මක ක්‍රම සහ තිරසාර කෘෂිකාර්මික නිෂ්පාදනය පිළිබඳව දැනගන්න.">
+
+Learn about composting, organic inputs, biological practices and sustainable agricultural production.
 
 </p>
 
@@ -1318,7 +1781,9 @@ Learn about organic farming practices, composting and sustainable agricultural p
 <a
 href="#"
 class="read-more"
+
 data-en="Read Article →"
+
 data-si="ලිපිය කියවන්න →">
 
 Read Article →
@@ -1332,18 +1797,24 @@ Read Article →
 
 
 
-<!-- ARTICLE 06 -->
+<!-- =====================================================
+     ARTICLE 09 - FARMING
+===================================================== -->
 
 <article
 class="article-card"
-data-category="crop"
-data-search="vegetable vegetables එළවළු vegetable cultivation">
+
+data-category="technology"
+
+data-search="
+greenhouse protected agriculture greenhouse farming
+">
 
 <div class="article-image">
 
 <img
-src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=900&q=80"
-alt="Vegetable cultivation">
+src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?auto=format&fit=crop&w=1000&q=85"
+alt="Protected agriculture">
 
 </div>
 
@@ -1353,30 +1824,36 @@ alt="Vegetable cultivation">
 
 <span
 class="article-category"
-data-en="CROPS"
-data-si="බෝග">
 
-CROPS
+data-en="PROTECTED AGRICULTURE"
+
+data-si="ආරක්ෂිත කෘෂිකර්මය">
+
+PROTECTED AGRICULTURE
 
 </span>
 
 
 <h3
 class="article-title"
-data-en="Vegetable Production in Sri Lanka"
-data-si="ශ්‍රී ලංකාවේ එළවළු නිෂ්පාදනය">
 
-Vegetable Production in Sri Lanka
+data-en="Protected Agriculture and Greenhouse Farming"
+
+data-si="ආරක්ෂිත කෘෂිකර්මය සහ හරිතාගාර වගාව">
+
+Protected Agriculture and Greenhouse Farming
 
 </h3>
 
 
 <p
 class="article-description"
-data-en="Explore important vegetable crops and good agricultural practices for better production."
-data-si="වැඩි ඵලදායිතාවයක් සඳහා වැදගත් එළවළු බෝග සහ යහපත් කෘෂිකාර්මික පිළිවෙත් පිළිබඳව සොයා බලන්න.">
 
-Explore important vegetable crops and good agricultural practices for better production.
+data-en="Discover how greenhouses and protected structures can improve crop production under controlled conditions."
+
+data-si="පාලිත පරිසර තත්ත්ව යටතේ හරිතාගාර සහ ආරක්ෂිත ව්‍යුහ භාවිතයෙන් බෝග නිෂ්පාදනය වැඩිදියුණු කළ හැකි ආකාරය සොයා බලන්න.">
+
+Discover how greenhouses and protected structures can improve crop production under controlled conditions.
 
 </p>
 
@@ -1384,7 +1861,9 @@ Explore important vegetable crops and good agricultural practices for better pro
 <a
 href="#"
 class="read-more"
+
 data-en="Read Article →"
+
 data-si="ලිපිය කියවන්න →">
 
 Read Article →
@@ -1401,17 +1880,20 @@ Read Article →
 
 
 
-<!-- NO RESULTS -->
+<!-- =====================================================
+     NO RESULTS
+===================================================== -->
 
 <div
 class="no-results"
 id="noResults">
 
 <p
-data-en="No articles found."
-data-si="ලිපි කිසිවක් හමු නොවීය.">
+data-en="No articles found. Try another search or category."
 
-No articles found.
+data-si="ලිපි කිසිවක් හමු නොවීය. වෙනත් සෙවුමක් හෝ කාණ්ඩයක් උත්සාහ කරන්න.">
+
+No articles found. Try another search or category.
 
 </p>
 
@@ -1433,15 +1915,22 @@ No articles found.
 
 <div class="footer-logo">
 
-<span class="green">Agriculture</span>
-<span class="orange">Diary</span>
+<span class="green">
+Agriculture
+</span>
+
+<span class="orange">
+Diary
+</span>
 
 </div>
 
 
 <p
 class="footer-text"
+
 data-en="Exploring Sri Lankan agriculture through knowledge, innovation and experience."
+
 data-si="දැනුම, නවෝත්පාදන සහ අත්දැකීම් තුළින් ශ්‍රී ලංකා කෘෂිකර්මය ගවේෂණය කිරීම.">
 
 Exploring Sri Lankan agriculture through knowledge, innovation and experience.
@@ -1456,15 +1945,122 @@ Exploring Sri Lankan agriculture through knowledge, innovation and experience.
 
 
 <!-- =====================================================
-     SEARCH & FILTER JAVASCRIPT
+     JAVASCRIPT
 ===================================================== -->
 
 <script>
 
 
-/* ==========================================
+/* =====================================================
+   HERO BACKGROUND SLIDESHOW
+===================================================== */
+
+/*
+   මේ URLs පස්සේ ඔයාට images/ folder එකේ
+   ඔයාගේ photos වලින් replace කරන්න පුළුවන්.
+*/
+
+const agricultureImages = [
+
+    /* 01 - Rice */
+
+    "https://images.unsplash.com/photo-1536633795327-2f48e47b4c4c?auto=format&fit=crop&w=1800&q=85",
+
+
+    /* 02 - Vegetables */
+
+    "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?auto=format&fit=crop&w=1800&q=85",
+
+
+    /* 03 - Fruits */
+
+    "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=1800&q=85",
+
+
+    /* 04 - Tea */
+
+    "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1800&q=85",
+
+
+    /* 05 - Farming */
+
+    "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=1800&q=85",
+
+
+    /* 06 - Modern Agriculture */
+
+    "https://images.unsplash.com/photo-1581093458791-9d42e3c3a0f3?auto=format&fit=crop&w=1800&q=85"
+
+];
+
+
+let currentSlide = 0;
+
+
+/* Change hero image */
+
+function showSlide(index){
+
+    currentSlide = index;
+
+
+    const hero =
+        document.querySelector(".article-hero");
+
+
+    hero.style.setProperty(
+        "--hero-image",
+        `url("${agricultureImages[currentSlide]}")`
+    );
+
+
+    /* Update dots */
+
+    const dots =
+        document.querySelectorAll(".slider-dot");
+
+
+    dots.forEach(function(dot){
+
+        dot.classList.remove("active");
+
+    });
+
+
+    if(dots[currentSlide]){
+
+        dots[currentSlide]
+            .classList.add("active");
+
+    }
+
+}
+
+
+/* Automatic slideshow */
+
+setInterval(function(){
+
+    currentSlide++;
+
+    if(
+        currentSlide >=
+        agricultureImages.length
+    ){
+
+        currentSlide = 0;
+
+    }
+
+    showSlide(currentSlide);
+
+},5000);
+
+
+
+/* =====================================================
    CATEGORY FILTER
-========================================== */
+===================================================== */
 
 function filterArticles(category, button){
 
@@ -1511,24 +2107,28 @@ function filterArticles(category, button){
     });
 
 
-    document.getElementById("noResults").style.display =
-        visible === 0 ? "block" : "none";
+    document.getElementById("noResults")
+        .style.display =
+        visible === 0
+        ? "block"
+        : "none";
 
 }
 
 
 
-/* ==========================================
+/* =====================================================
    SEARCH
-========================================== */
+===================================================== */
 
 function searchArticles(){
 
+    const input =
+        document.getElementById("searchInput");
+
+
     const search =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
+        input.value.toLowerCase().trim();
 
 
     const articles =
@@ -1541,7 +2141,11 @@ function searchArticles(){
     articles.forEach(function(article){
 
         const text =
-            article.dataset.search.toLowerCase();
+            (
+                article.dataset.search +
+                " " +
+                article.innerText
+            ).toLowerCase();
 
 
         if(text.includes(search)){
@@ -1561,42 +2165,53 @@ function searchArticles(){
     });
 
 
-    document.getElementById("noResults").style.display =
-        visible === 0 ? "block" : "none";
+    document.getElementById("noResults")
+        .style.display =
+        visible === 0
+        ? "block"
+        : "none";
 
 }
 
 
 
-/* ==========================================
-   LANGUAGE CHANGE
-========================================== */
+/* =====================================================
+   LANGUAGE + SEARCH PLACEHOLDER
+===================================================== */
 
-const originalSetLanguage = window.setLanguage;
+const originalSetLanguage =
+    window.setLanguage;
 
 
-window.setLanguage = function(language){
+window.setLanguage =
+function(language){
 
     originalSetLanguage(language);
 
 
-    const search =
+    const searchInput =
         document.getElementById("searchInput");
 
 
-    if(search){
+    if(searchInput){
 
         if(language === "si"){
 
-            search.placeholder =
-                search.getAttribute("data-placeholder-si");
+            searchInput.placeholder =
+                searchInput
+                .getAttribute(
+                    "data-placeholder-si"
+                );
 
         }
 
         else{
 
-            search.placeholder =
-                search.getAttribute("data-placeholder-en");
+            searchInput.placeholder =
+                searchInput
+                .getAttribute(
+                    "data-placeholder-en"
+                );
 
         }
 
@@ -1604,71 +2219,6 @@ window.setLanguage = function(language){
 
 };
 
-<script>
-
-/* ==========================================
-   AGRICULTURE HERO BACKGROUND SLIDESHOW
-========================================== */
-
-const agricultureImages = [
-
-    "images/rice.jpg",
-
-    "images/vegetables.jpg",
-
-    "images/fruits.jpg",
-
-    "images/tea.jpg",
-
-    "images/floriculture.jpg",
-
-    "images/modern-agriculture.jpg"
-
-];
-
-
-let currentImage = 0;
-
-
-function changeAgricultureBackground(){
-
-    const hero =
-        document.querySelector(".article-hero");
-
-
-    currentImage++;
-
-    if(currentImage >= agricultureImages.length){
-
-        currentImage = 0;
-
-    }
-
-
-    hero.style.setProperty(
-        "--hero-image",
-        `url("${agricultureImages[currentImage]}")`
-    );
-
-
-    hero.classList.add("change-background");
-
-
-    setTimeout(function(){
-
-        hero.classList.remove("change-background");
-
-    },1200);
-
-}
-
-
-/* Start slideshow */
-
-setInterval(
-    changeAgricultureBackground,
-    4000
-);
 
 </script>
 
