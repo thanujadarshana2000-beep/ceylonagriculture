@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en/sinhala">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ceylon Agriculture Diary</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f8f8f8;
+}
+
+/* Hero Section */
+
+.hero{
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+url("spinix.jpg");
+
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+
+}
+
+/* Navbar */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 8%;
+color:white;
+
+}
+
+.logo{
+
+font-size:32px;
+font-weight:700;
+letter-spacing:1px;
+
+}
+
+.green{
+    color:#00d084;
+}
+
+.orange{
+    color:#ff9800;
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+gap:35px;
+
+}
+
+nav ul li{
+
+cursor:pointer;
+transition:.3s;
+
+}
+
+nav ul li:hover{
+
+color:#00d084;
+
+}
+
+.btn{
+
+padding:10px 24px;
+background:#00d084;
+border:none;
+border-radius:30px;
+color:white;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#00b96b;
+
+}
+
+/* Hero Content */
+
+.hero-content{
+
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-direction:column;
+color:white;
+padding:20px;
+
+}
+
+.hero-content h1{
+
+font-size:70px;
+font-weight:700;
+margin-bottom:20px;
+line-height:1.2;
+
+}
+
+.hero-content p{
+
+font-size:20px;
+max-width:750px;
+margin-bottom:40px;
+opacity:.95;
+
+}
+
+
+/* Explore Button */
+.explore{
+
+margin-top:35px;
+padding:16px 45px;
+background:white;
+color:#222;
+border-radius:40px;
+text-decoration:none;
+text-align:center;
+font-weight:600;
+transition:.3s;
+
+}
+
+.explore:hover{
+
+background:#00d084;
+color:white;
+
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero-content h1{
+
+font-size:42px;
+
+}
+
+.hero-content p{
+
+font-size:17px;
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+.logo{
+
+font-size:25px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<nav>
+
+<div class="logo">
+<span class="green">Agriculture</span> <span class="orange">Diary</span>
+</div>
+
+
+</nav>
+
+<div class="hero-content">
+
+<h1>From Tradtional Agriculture to Modern Agriculture</h1>
+
+<p>
+Explore breathtaking beaches, misty mountains, wildlife safaris,
+ancient kingdoms, and unforgettable adventures with local travel experts.
+</p>
+</div>
+
+<a href="login.html" class="explore">
+Explore Now →
+</a>
+
+</div>
+
+</section>
+
+</body>
+</html>
